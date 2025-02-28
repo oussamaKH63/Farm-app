@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+motor
+pymongo
+python-dotenv
+passlib[bcrypt]
+pyjwt
+python-jose[cryptography]
+email-validator
+pydantic[email]
+pytest
+requests
+mongomock 
+pytest-asyncio
+httpx
+slowapi
