@@ -7,9 +7,9 @@ import os
 from dotenv import load_dotenv
 from pymongo.database import Database
 
-## #Load environment variables
+## ##Load environment variables
 load_dotenv()
-
+#oussema
 # Fetch MongoDB connection URI from .env file
 MONGO_URI = os.getenv("MONGO_URI")
 
