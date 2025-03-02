@@ -9,7 +9,7 @@ from pymongo.database import Database
 
 ## ##Load environment variables
 load_dotenv()
-#oussema
+# oussema
 # Fetch MongoDB connection URI from .env file
 MONGO_URI = os.getenv("MONGO_URI")
 
