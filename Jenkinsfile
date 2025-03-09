@@ -1,15 +1,16 @@
 pipeline {
     agent any
     environment {
-        NEXUS_CREDENTIALS = credentials('nexus-credentials')
-        NEXUS_URL = '192.168.33.10:8082'
-        DOCKER_IMAGE_BACKEND = "${NEXUS_URL}/farm-backend"
-        DOCKER_IMAGE_FRONTEND = "${NEXUS_URL}/farm-frontend"
+        // Use your Docker Hub username or organization as the registry namespace
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub') 
+        DOCKERHUB_NAMESPACE = 'workshop' 
+        DOCKER_IMAGE_BACKEND = "${DOCKERHUB_NAMESPACE}/farm-backend"
+        DOCKER_IMAGE_FRONTEND = "${DOCKERHUB_NAMESPACE}/farm-frontend"
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'test', url: 'https://github.com/oussamaKH63/Farm-app.git'
+                git branch: 'main', url: 'https://github.com/oussamaKH63/Farm-app.git'
             }
         }
         stage('Build Backend') {
@@ -26,9 +27,9 @@ pipeline {
                 }
             }
         }
-        stage('Push to Nexus') {
+        stage('Push to Docker Hub') {
             steps {
-                sh 'echo $NEXUS_CREDENTIALS_PSW | docker login -u $NEXUS_CREDENTIALS_USR --password-stdin $NEXUS_URL'
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 sh 'docker push $DOCKER_IMAGE_BACKEND:${BUILD_NUMBER}'
                 sh 'docker push $DOCKER_IMAGE_FRONTEND:${BUILD_NUMBER}'
             }
