@@ -1,11 +1,13 @@
 pipeline {
     agent any
     environment {
-        // Use your Docker Hub username or organization as the registry namespace
         DOCKERHUB_CREDENTIALS = credentials('dockerhub') 
         DOCKERHUB_NAMESPACE = 'firassahnoun' 
         DOCKER_IMAGE_BACKEND = "${DOCKERHUB_NAMESPACE}/farm-backend"
         DOCKER_IMAGE_FRONTEND = "${DOCKERHUB_NAMESPACE}/farm-frontend"
+    }
+    triggers {
+        githubPush() // Trigger the pipeline on GitHub push events
     }
     stages {
         stage('Checkout') {
