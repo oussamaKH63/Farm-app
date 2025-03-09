@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Use your Docker Hub username or organization as the registry namespace
         DOCKERHUB_CREDENTIALS = credentials('dockerhub') 
-        DOCKERHUB_NAMESPACE = 'workshop' 
+        DOCKERHUB_NAMESPACE = 'ousskh63' 
         DOCKER_IMAGE_BACKEND = "${DOCKERHUB_NAMESPACE}/farm-backend"
         DOCKER_IMAGE_FRONTEND = "${DOCKERHUB_NAMESPACE}/farm-frontend"
     }
