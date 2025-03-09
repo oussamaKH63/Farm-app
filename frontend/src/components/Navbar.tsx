@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
     throw new Error("AuthContext must be used within an AuthProvider");
   }
 
-  const { user, isAuthenticated, logout } = authContext;
+  const { isAuthenticated, logout } = authContext;
 
   /**
    * Toggles the mobile menu open/close state.
