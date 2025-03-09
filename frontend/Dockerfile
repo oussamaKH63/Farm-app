@@ -7,8 +7,10 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies, including @types/node
+RUN npm install --save-dev @types/node && \
+    npm install && \
+    npm cache clean --force
 
 # Copy the rest of the application code
 COPY . .
@@ -20,7 +22,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the build output from the builder stage
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Expose port 80 to the outside world
 EXPOSE 80
