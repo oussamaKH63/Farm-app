@@ -7,7 +7,7 @@ pipeline {
         DOCKER_IMAGE_FRONTEND = "${DOCKERHUB_NAMESPACE}/farm-frontend"
     }
     triggers {
-        githubPush() // Trigger the pipeline on GitHub push events
+        githubPush() 
     }
     stages {
         stage('Checkout') {
