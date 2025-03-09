@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'test', url: 'https://github.com/yourusername/farm-app.git'
+                git branch: 'test', url: 'https://github.com/oussamaKH63/Farm-app.git'
             }
         }
         stage('Build Backend') {
