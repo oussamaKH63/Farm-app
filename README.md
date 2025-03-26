@@ -1,5 +1,5 @@
 # **🚀 FARM App (FastAPI + Next.js + MongoDB)**  
-
+Test
 A minimal **FARM (FastAPI, React, MongoDB)** boilerplate with **JWT authentication** and **user CRUD** operations.  
 Secure, scalable, and extendable for modern web applications.  
 
