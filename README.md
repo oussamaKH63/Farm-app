@@ -112,7 +112,7 @@ npm run dev
 
 ---
 
-## **🛠 API Endpoints**
+# **🛠 API Endpoints**
 ### **User CRUD**
 | Operation     | API Route            | Method |
 |--------------|---------------------|--------|
