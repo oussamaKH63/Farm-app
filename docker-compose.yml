@@ -15,6 +15,7 @@ services:
 
   # React frontend service
     # TEST BRANCH
+    # mock merge conflict test
   frontend:
     build:
       context: ./frontend
