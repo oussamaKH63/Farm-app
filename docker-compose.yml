@@ -14,7 +14,7 @@ services:
       - mongo
 
   # React frontend service
-    # TEST BRANCH
+    # TEST BRANCH 2
   frontend:
     build:
       context: ./frontend
