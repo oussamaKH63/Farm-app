@@ -3,9 +3,9 @@ version: '3.8'
 services:
   # FastAPI backend service
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: shayoossi/farm-backend:latest
+      
+      
     ports:
       - "8000:8000"
     environment:
@@ -14,13 +14,10 @@ services:
       - mongo
 
   # React frontend service
-    # TEST BRANCH 22
-        # mock merge conflict test
+   
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: shayoossi/farm-frontend:latest
     ports:
       - "3000:80"
     depends_on:
