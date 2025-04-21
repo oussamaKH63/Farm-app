@@ -18,22 +18,22 @@ pipeline {
         stage('Build Backend') {
             steps {
                 dir('backend') {
-                    sh 'docker build -t $DOCKER_IMAGE_BACKEND:${BUILD_NUMBER} .'
+                    sh 'sudo docker build -t $DOCKER_IMAGE_BACKEND:${BUILD_NUMBER} .'
                 }
             }
         }
         stage('Build Frontend') {
             steps {
                 dir('frontend') {
-                    sh 'docker build -t $DOCKER_IMAGE_FRONTEND:${BUILD_NUMBER} .'
+                    sh 'sudo docker build -t $DOCKER_IMAGE_FRONTEND:${BUILD_NUMBER} .'
                 }
             }
         }
         stage('Push to Docker Hub') {
             steps {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                sh 'docker push $DOCKER_IMAGE_BACKEND:${BUILD_NUMBER}'
-                sh 'docker push $DOCKER_IMAGE_FRONTEND:${BUILD_NUMBER}'
+                sh 'sudo docker push $DOCKER_IMAGE_BACKEND:${BUILD_NUMBER}'
+                sh 'sudo docker push $DOCKER_IMAGE_FRONTEND:${BUILD_NUMBER}'
             }
         }
         stage('Deploy') {
