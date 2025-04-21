@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub') 
-        DOCKERHUB_NAMESPACE = 'firassahnoun' 
+        DOCKERHUB_NAMESPACE = 'shayoossi' 
         DOCKER_IMAGE_BACKEND = "${DOCKERHUB_NAMESPACE}/farm-backend"
         DOCKER_IMAGE_FRONTEND = "${DOCKERHUB_NAMESPACE}/farm-frontend"
     }
