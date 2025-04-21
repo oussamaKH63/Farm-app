@@ -14,12 +14,9 @@ services:
       - mongo
 
   # React frontend service
-<<<<<<< HEAD
-    # TEST BRANCH 2
-=======
-    # TEST BRANCH
-    # mock merge conflict test
->>>>>>> 56be43332b483a341eee916d7f81bf847ff1fa20
+    # TEST BRANCH 22
+        # mock merge conflict test
+
   frontend:
     build:
       context: ./frontend
