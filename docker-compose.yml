@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # FastAPI backend service
   backend:
-    image: shayoossi/farm-backend:latest
+    image: shayoossi/farm-backend:20
       
       
     ports:
@@ -17,7 +17,7 @@ services:
    
 
   frontend:
-    image: shayoossi/farm-frontend:latest
+    image: shayoossi/farm-frontend:20
     ports:
       - "3000:80"
     depends_on:
